@@ -71,7 +71,7 @@ local function get_body(bufnr, start_line, stop_line)
     end
   end
 
-  local is_json, json_body = pcall(vim.fn.json_decode, body)
+  local is_json, json_body = pcall(vim.api.json_decode, body)
   if is_json then
     return json_body
   end
